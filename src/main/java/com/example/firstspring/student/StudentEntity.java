@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.Period;
+
 
 @Entity
 @Table
@@ -13,12 +13,10 @@ import java.time.Period;
 @AllArgsConstructor
 public class StudentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String email;
     private LocalDate dob;
-    @Transient
     private Integer age;
 
 }

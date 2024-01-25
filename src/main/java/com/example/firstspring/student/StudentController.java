@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
     @Autowired
     private StudentAdaptor adaptor;
+    @Autowired
   private StudentService studentService;
 
 
 
 
-    @PostMapping()
+    @PostMapping("/info")
     public void save(@RequestBody StudentDto studentDto) {
         studentService.save(adaptor.convert(studentDto));
     }

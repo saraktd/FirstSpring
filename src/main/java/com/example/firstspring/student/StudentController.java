@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
     @Autowired
     private StudentAdaptor adaptor;
-    @Autowired
-    private final StudentRepository studentRepository;
+  private StudentService studentService;
 
-    public StudentController( StudentRepository studentRepository) {
-    this.studentRepository = studentRepository;
 
-    }
+
+
     @PostMapping()
     public void save(@RequestBody StudentDto studentDto) {
-        studentRepository.save(adaptor.convert(studentDto));
+        studentService.save(adaptor.convert(studentDto));
     }
 
 

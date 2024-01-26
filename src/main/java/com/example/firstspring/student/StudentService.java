@@ -1,6 +1,7 @@
 package com.example.firstspring.student;
 
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +12,11 @@ public class StudentService {
     private  StudentRepository studentRepository;
 
 
-
-    public StudentEntity save( StudentEntity studentEntity){
+@Transactional
+    public StudentEntity save(StudentEntity studentEntity){
 
         return studentRepository.save(studentEntity);
     }
+
 
 }
